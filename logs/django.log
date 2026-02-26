@@ -7,3 +7,4 @@
 2026-02-26 19:30:45,331 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
 2026-02-26 19:30:46,666 - user.views - INFO - User 'Recep' logged in successfully.
 2026-02-26 19:30:50,925 - patient.views - INFO - PatientListView: search query - None
+2026-02-26 20:36:56,034 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
