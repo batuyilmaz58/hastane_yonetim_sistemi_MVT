@@ -2,6 +2,8 @@
 
 Profesyonel bir hastane yönetim sistemi - Hastalar, Doktorlar ve Randevu Yönetimi
 
+!["dashboard_görüntüsü"](image.png)
+
 ## 📋 İçindekiler
 
 - [Özellikler](#-özellikler)
