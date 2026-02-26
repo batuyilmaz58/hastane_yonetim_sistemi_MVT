@@ -54,7 +54,7 @@ class UserRegisterView(CreateView):
             )
             logger.info(f"New doctor registered: '{user.username}' (ID: {user.id})")
         else:
-            logger.info(f"New user registered: '{user.username}' (ID: {user.id})")
+            logger.info(f"New secretary registered: '{user.username}' (ID: {user.id})")
 
         messages.success(self.request, "Kayıt başarıyla tamamlandı. Lütfen giriş yapınız.")
         return redirect(self.success_url)
