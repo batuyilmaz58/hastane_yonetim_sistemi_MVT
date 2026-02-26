@@ -10,9 +10,7 @@ Profesyonel bir hastane yönetim sistemi - Hastalar, Doktorlar ve Randevu Yönet
 - [Proje Yapısı](#-proje-yapısı)
 - [Veritabanı Modelleri](#-veritabanı-modelleri)
 - [Web Arayüzü](#-web-arayüzü)
-- [Ekran Resmleri](#-ekran-resmleri)
 - [Kullanım Kılavuzu](#-kullanım-kılavuzu)
-- [Troubleshooting](#-troubleshooting)
 
 ---
 
@@ -93,7 +91,6 @@ python manage.py createsuperuser
 - Username: admin
 - Email: admin@example.com
 - Password: (şifre girin)
-- Role: SECRETARY
 
 ### 6. Sunucuyu Başlat
 
@@ -299,12 +296,6 @@ Sistem özeti ve hızlı istatistikler
 - İletişim bilgileri
 - Randevu al butonu
 
-#### 9. **Doktor Detayları** (`/doctors/<id>/`)
-- Doktor bilgileri
-- Uzmanlık alanı
-- Lisans bilgileri
-- Tarihçe
-
 ---
 
 ## 🛠️ Django Admin Paneli
@@ -443,7 +434,7 @@ python manage.py runserver 0.0.0.0:8000
 
 ## 📊 Proje İstatistikleri
 
-- **Modeller**: 6 (Patient, Doctor, Appointment, DoctorSchedule, MedicalRecord, CustomUser)
+- **Modeller**: 4 (Patient, Doctor, Appointment, CustomUser)
 - **Views**: 15+ (List, Create, Update, Delete views)
 - **Forms**: 6 (ModelForms tüm uygulamalar için)
 - **Template'ler**: 10+ (Bootstrap 5 tasarımı)
@@ -451,42 +442,8 @@ python manage.py runserver 0.0.0.0:8000
 
 ---
 
-## 🚀 Gelecek Özellikler
-
-- [ ] SMS/Email bildirim sistemi
-- [ ] Ödeme entegrasyonu
-- [ ] Hasta portalı
-- [ ] Video danışma
-- [ ] Mobil uygulama (iOS/Android)
-- [ ] WhatsApp integrasyonu
-- [ ] Raporlama ve analitik
-- [ ] İçeriden muhasebe sistemi
-- [ ] API endpoints (REST)
-
----
-
-## 📝 Lisans
-
-Bu proje MIT lisansı altında yayınlanmıştır.
-
----
-
-## 👥 İletişim
+## 👥 İletişim & Geri Bildirim
 
 Sorularınız mı var? Bize ulaşın:
-- **Email**: info@hospital.com
-- **GitHub Issues**: [Issues](https://github.com/username/repo/issues)
-
----
-
-## 🙏 Teşekkürler
-
-- Django Community
-- Bootstrap Team
-- Font Awesome
-
----
-
-**Yapıldığı Tarih**: 26.02.2024
-**Son Güncelleme**: 26.02.2024
-**Versiyon**: 2.0 (Web Interface Edition)
+- **Email**: batuhanyilmaz0011@gmail.com
+  
