@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ doctor.user.get_full_name }} - Hastane Yönetim Sistemi{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="mb-4">
+                    <i class="fas fa-stethoscope" style="color: #e74c3c;"></i>
+                    {{ doctor.user.first_name }} {{ doctor.user.last_name }}
+                </h2>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-graduation-cap"></i> Uzmanlık</h5>
+                        <p>{{ doctor.specialization }}</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-id-card"></i> Lisans Numarası</h5>
+                        <p>{{ doctor.license_number }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-envelope"></i> E-mail</h5>
+                        <p><a href="mailto:{{ doctor.user.email }}">{{ doctor.user.email }}</a></p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-phone"></i> Telefon</h5>
+                        <p>{{ doctor.user.phone }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-calendar"></i> Kayıt Tarihi</h5>
+                        <p>{{ doctor.created_at|date:"d.m.Y" }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">İşlemler</h5>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'appointment_create' %}" class="btn btn-primary w-100 mb-2">
+                    <i class="fas fa-calendar-plus"></i> Randevu Al
+                </a>
+                <a href="{% url 'doctor_list' %}" class="btn btn-secondary w-100">
+                    <i class="fas fa-arrow-left"></i> Geri Dön
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

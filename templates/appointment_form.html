@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Randevu Formu - Hastane Yönetim Sistemi{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-calendar-plus"></i> {% if form.instance.id %}Randevu Düzenle{% else %}Yeni Randevu{% endif %}</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="patient" class="form-label">
+                            <i class="fas fa-user"></i> Hasta
+                        </label>
+                        {{ form.patient }}
+                        <div class="form-text">Randevu alacak hastayı seçin</div>
+                        {% if form.patient.errors %}
+                            <div class="text-danger">{{ form.patient.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="doctor" class="form-label">
+                            <i class="fas fa-stethoscope"></i> Doktor
+                        </label>
+                        {{ form.doctor }}
+                        <div class="form-text">Muayene edecek doktoru seçin</div>
+                        {% if form.doctor.errors %}
+                            <div class="text-danger">{{ form.doctor.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="appointment_date" class="form-label">
+                            <i class="fas fa-calendar"></i> Randevu Tarihi ve Saati
+                        </label>
+                        {{ form.appointment_date }}
+                        <div class="form-text">Randevunun tarih ve saatini belirtin</div>
+                        {% if form.appointment_date.errors %}
+                            <div class="text-danger">{{ form.appointment_date.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="status" class="form-label">
+                            <i class="fas fa-info-circle"></i> Durum
+                        </label>
+                        {{ form.status }}
+                        {% if form.status.errors %}
+                            <div class="text-danger">{{ form.status.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">
+                            <i class="fas fa-sticky-note"></i> Notlar
+                        </label>
+                        {{ form.notes }}
+                        <div class="form-text">Randevu hakkında not ekleyebilirsiniz</div>
+                        {% if form.notes.errors %}
+                            <div class="text-danger">{{ form.notes.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <style>
+                        .form-control, .form-select {
+                            border-radius: 5px;
+                            border: 1px solid #ddd;
+                            padding: 10px 12px;
+                        }
+                    </style>
+
+                    <div class="d-flex gap-2 justify-content-between mt-4">
+                        <a href="{% url 'appointment_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Geri Dön
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Kaydet
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('.form-control, .form-select');
+        inputs.forEach(input => input.classList.add('form-control'));
+    });
+</script>
+{% endblock %}

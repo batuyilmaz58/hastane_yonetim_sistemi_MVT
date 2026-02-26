@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}Hasta Formu - Hastane Yönetim Sistemi{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-user-plus"></i> {% if form.instance.id %}Hasta Düzenle{% else %}Yeni Hasta Ekle{% endif %}</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="first_name" class="form-label">
+                                <i class="fas fa-user"></i> Ad
+                            </label>
+                            {{ form.first_name }}
+                            <div class="form-text">Hastanın adını girin</div>
+                            {% if form.first_name.errors %}
+                                <div class="text-danger">{{ form.first_name.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="last_name" class="form-label">
+                                <i class="fas fa-user"></i> Soyad
+                            </label>
+                            {{ form.last_name }}
+                            <div class="form-text">Hastanın soyadını girin</div>
+                            {% if form.last_name.errors %}
+                                <div class="text-danger">{{ form.last_name.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="national_id" class="form-label">
+                                <i class="fas fa-id-card"></i> TC Numarası
+                            </label>
+                            {{ form.national_id }}
+                            <div class="form-text">11 haneli TC kimlik numarasını girin</div>
+                            {% if form.national_id.errors %}
+                                <div class="text-danger">{{ form.national_id.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="date_of_birth" class="form-label">
+                                <i class="fas fa-birthday-cake"></i> Doğum Tarihi
+                            </label>
+                            {{ form.date_of_birth }}
+                            {% if form.date_of_birth.errors %}
+                                <div class="text-danger">{{ form.date_of_birth.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="gender" class="form-label">
+                                <i class="fas fa-venus-mars"></i> Cinsiyet
+                            </label>
+                            {{ form.gender }}
+                            {% if form.gender.errors %}
+                                <div class="text-danger">{{ form.gender.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">
+                                <i class="fas fa-phone"></i> Telefon
+                            </label>
+                            {{ form.phone }}
+                            <div class="form-text">10 haneli telefon numarası</div>
+                            {% if form.phone.errors %}
+                                <div class="text-danger">{{ form.phone.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address" class="form-label">
+                            <i class="fas fa-map-marker-alt"></i> Adres
+                        </label>
+                        {{ form.address }}
+                        <div class="form-text">Hastanın tam adresini girin</div>
+                        {% if form.address.errors %}
+                            <div class="text-danger">{{ form.address.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <style>
+                        .form-control, .form-select {
+                            border-radius: 5px;
+                            border: 1px solid #ddd;
+                            padding: 10px 12px;
+                        }
+                    </style>
+
+                    <div class="d-flex gap-2 justify-content-between mt-4">
+                        <a href="{% url 'patient_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Geri Dön
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Kaydet
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('.form-control, .form-select');
+        inputs.forEach(input => input.classList.add('form-control'));
+    });
+</script>
+{% endblock %}

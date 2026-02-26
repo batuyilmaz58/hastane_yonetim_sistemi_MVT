@@ -1,0 +1,9 @@
+2026-02-26 19:20:11,691 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-02-26 19:20:24,175 - user.views - INFO - User 'BatuhanYýlmaz' logged in successfully.
+2026-02-26 19:20:35,068 - user.views - INFO - User '' logged out successfully.
+2026-02-26 19:21:03,433 - user.views - INFO - New user registered: 'Recep' (ID: 6)
+2026-02-26 19:21:08,630 - user.views - INFO - User 'Recep' logged in successfully.
+2026-02-26 19:21:10,751 - patient.views - INFO - PatientListView: search query - None
+2026-02-26 19:30:45,331 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-02-26 19:30:46,666 - user.views - INFO - User 'Recep' logged in successfully.
+2026-02-26 19:30:50,925 - patient.views - INFO - PatientListView: search query - None

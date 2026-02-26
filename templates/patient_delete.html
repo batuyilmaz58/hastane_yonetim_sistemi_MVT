@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Hasta Sil - Hastane Yönetim Sistemi{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card bg-danger text-white">
+            <div class="card-body p-5 text-center">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem;"></i>
+                <h3 class="mt-3 mb-2">Hastayı Silmek İstediğinizden Emin misiniz?</h3>
+                <p class="mb-4">Bu işlem geri alınamaz!</p>
+
+                <div class="mb-3">
+                    <strong>{{ object.first_name }} {{ object.last_name }}</strong><br>
+                    <small>TC: {{ object.national_id }}</small>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-light btn-lg me-2">
+                        <i class="fas fa-trash"></i> Sil
+                    </button>
+                    <a href="{% url 'patient_list' %}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-times"></i> İptal
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
