@@ -9,3 +9,9 @@
 2026-02-26 19:30:50,925 - patient.views - INFO - PatientListView: search query - None
 2026-02-26 20:36:56,034 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
 2026-02-26 20:36:57,775 - user.views - INFO - User 'Recep' logged in successfully.
+2026-02-26 21:38:49,136 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-02-26 21:38:50,978 - user.views - INFO - User 'Recep' logged in successfully.
+2026-02-26 21:39:00,689 - patient.views - INFO - PatientListView: search query - None
+2026-02-26 21:39:04,861 - django.request - WARNING - Not Found: /doctors/1/
+2026-02-26 21:39:07,374 - django.request - WARNING - Not Found: /doctors/2/
+2026-02-26 21:48:56,059 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
