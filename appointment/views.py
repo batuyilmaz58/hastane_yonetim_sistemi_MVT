@@ -22,6 +22,11 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     template_name = "appointment_form.html"
     success_url = reverse_lazy("appointment_list")
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
     def form_valid(self, form):
         try:
             response  = super().form_valid(form)
@@ -38,6 +43,11 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     form_class = AppointmentForm
     template_name = "appointment_form.html"
     success_url = reverse_lazy("appointment_list")
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
 
     def form_valid(self, form):
         try:

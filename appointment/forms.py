@@ -1,5 +1,6 @@
 from django import forms
 from .models import Appointment
+from doctor.models import Doctor
 
 
 class AppointmentForm(forms.ModelForm):
@@ -26,3 +27,16 @@ class AppointmentForm(forms.ModelForm):
                 'placeholder': 'Notlar'
             }),
         }
+
+    def __init__(self, *args, user=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        if user and user.role == 'DOCTOR':
+            # Doktor sadece kendisini görebilir
+            try:
+                doctor = Doctor.objects.get(user=user)
+                self.fields['doctor'].queryset = Doctor.objects.filter(user=user)
+            except Doctor.DoesNotExist:
+                self.fields['doctor'].queryset = Doctor.objects.none()
+        else:
+            # Sekreter tüm doktorları görebilir
+            self.fields['doctor'].queryset = Doctor.objects.all()
