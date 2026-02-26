@@ -8,7 +8,6 @@ Profesyonel bir hastane yönetim sistemi - Hastalar, Doktorlar ve Randevu Yönet
 - [Gereksinimler](#-gereksinimler)
 - [Kurulum](#-kurulum)
 - [Proje Yapısı](#-proje-yapısı)
-- [Veritabanı Modelleri](#-veritabanı-modelleri)
 - [Web Arayüzü](#-web-arayüzü)
 - [Kullanım Kılavuzu](#-kullanım-kılavuzu)
 
