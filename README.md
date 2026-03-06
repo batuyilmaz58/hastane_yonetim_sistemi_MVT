@@ -447,4 +447,5 @@ python manage.py runserver 0.0.0.0:8000
 
 Sorularınız mı var? Bize ulaşın:
 - **Email**: batuhanyilmaz0011@gmail.com
-  
+
+Bu proje MIT LICENSE ile lisanslanmıştır.
